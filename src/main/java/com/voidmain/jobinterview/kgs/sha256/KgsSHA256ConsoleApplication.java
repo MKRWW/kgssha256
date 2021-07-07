@@ -1,13 +1,13 @@
-package com.voidmain.jobinterview.kgs;
+package com.voidmain.jobinterview.kgs.sha256;
 
-import com.voidmain.jobinterview.kgs.exception.ParameterValidationException;
-import com.voidmain.jobinterview.kgs.model.Hash;
-import com.voidmain.jobinterview.kgs.repositories.IDataRepository;
-import com.voidmain.jobinterview.kgs.repositories.impl.FileRepository;
-import com.voidmain.jobinterview.kgs.services.IHashService;
-import com.voidmain.jobinterview.kgs.services.IParameterValidatorService;
-import com.voidmain.jobinterview.kgs.services.impl.CommandLineParameterValidatorService;
-import com.voidmain.jobinterview.kgs.services.impl.SHA256HashService;
+import com.voidmain.jobinterview.kgs.sha256.exception.ParameterValidationException;
+import com.voidmain.jobinterview.kgs.sha256.model.Hash;
+import com.voidmain.jobinterview.kgs.sha256.repositories.IDataRepository;
+import com.voidmain.jobinterview.kgs.sha256.repositories.impl.FileRepository;
+import com.voidmain.jobinterview.kgs.sha256.services.IHashService;
+import com.voidmain.jobinterview.kgs.sha256.services.IParameterValidatorService;
+import com.voidmain.jobinterview.kgs.sha256.services.impl.CommandLineParameterValidatorService;
+import com.voidmain.jobinterview.kgs.sha256.services.impl.SHA256HashService;
 import org.apache.log4j.Logger;
 import org.bouncycastle.jce.provider.BouncyCastleProvider;
 

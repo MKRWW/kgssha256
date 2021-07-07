@@ -1,7 +1,7 @@
-package com.voidmain.jobinterview.kgs.repositories.impl;
+package com.voidmain.jobinterview.kgs.sha256.repositories.impl;
 
-import com.voidmain.jobinterview.kgs.model.Hash;
-import com.voidmain.jobinterview.kgs.repositories.IDataRepository;
+import com.voidmain.jobinterview.kgs.sha256.model.Hash;
+import com.voidmain.jobinterview.kgs.sha256.repositories.IDataRepository;
 import org.apache.log4j.Logger;
 
 import javax.annotation.CheckForNull;

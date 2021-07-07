@@ -1,6 +1,6 @@
-package com.voidmain.jobinterview.kgs.repositories;
+package com.voidmain.jobinterview.kgs.sha256.repositories;
 
-import com.voidmain.jobinterview.kgs.model.Hash;
+import com.voidmain.jobinterview.kgs.sha256.model.Hash;
 
 import javax.annotation.CheckForNull;
 import javax.annotation.Nonnull;

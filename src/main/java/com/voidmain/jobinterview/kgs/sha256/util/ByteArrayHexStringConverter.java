@@ -1,4 +1,4 @@
-package com.voidmain.jobinterview.kgs.util;
+package com.voidmain.jobinterview.kgs.sha256.util;
 
 import javax.annotation.Nonnull;
 

@@ -53,7 +53,8 @@
                             <shadedArtifactAttached>true</shadedArtifactAttached>
                             <transformers>
                                 <transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
-                                    <mainClass>com.voidmain.jobinterview.kgs.KgsSHA256ConsoleApplication</mainClass>
+                                    <mainClass>com.voidmain.jobinterview.kgs.sha256.KgsSHA256ConsoleApplication
+                                    </mainClass>
                                 </transformer>
                             </transformers>
                             <filters>

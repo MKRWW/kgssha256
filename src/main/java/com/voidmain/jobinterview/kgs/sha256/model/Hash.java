@@ -1,4 +1,4 @@
-package com.voidmain.jobinterview.kgs.model;
+package com.voidmain.jobinterview.kgs.sha256.model;
 
 import lombok.Data;
 import lombok.NonNull;

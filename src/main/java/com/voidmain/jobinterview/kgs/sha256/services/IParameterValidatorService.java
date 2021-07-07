@@ -1,6 +1,6 @@
-package com.voidmain.jobinterview.kgs.services;
+package com.voidmain.jobinterview.kgs.sha256.services;
 
-import com.voidmain.jobinterview.kgs.exception.ParameterValidationException;
+import com.voidmain.jobinterview.kgs.sha256.exception.ParameterValidationException;
 
 import javax.annotation.Nonnull;
 import java.util.List;

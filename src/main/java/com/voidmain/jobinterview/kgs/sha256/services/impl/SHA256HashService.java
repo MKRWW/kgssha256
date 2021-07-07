@@ -1,9 +1,9 @@
-package com.voidmain.jobinterview.kgs.services.impl;
+package com.voidmain.jobinterview.kgs.sha256.services.impl;
 
-import com.voidmain.jobinterview.kgs.model.Hash;
-import com.voidmain.jobinterview.kgs.repositories.IDataRepository;
-import com.voidmain.jobinterview.kgs.services.IHashService;
-import com.voidmain.jobinterview.kgs.util.ByteArrayHexStringConverter;
+import com.voidmain.jobinterview.kgs.sha256.model.Hash;
+import com.voidmain.jobinterview.kgs.sha256.repositories.IDataRepository;
+import com.voidmain.jobinterview.kgs.sha256.services.IHashService;
+import com.voidmain.jobinterview.kgs.sha256.util.ByteArrayHexStringConverter;
 
 import javax.annotation.CheckForNull;
 import javax.annotation.Nonnull;

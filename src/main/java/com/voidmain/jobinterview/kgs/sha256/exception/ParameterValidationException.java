@@ -1,4 +1,4 @@
-package com.voidmain.jobinterview.kgs.exception;
+package com.voidmain.jobinterview.kgs.sha256.exception;
 
 import javax.annotation.Nonnull;
 
