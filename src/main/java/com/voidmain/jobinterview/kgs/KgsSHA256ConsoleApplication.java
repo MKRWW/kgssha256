@@ -19,9 +19,10 @@ import java.security.Security;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
+import java.util.Objects;
 
 /**
- * Entrypointclass for a typical console application
+ * Entrypoint class for a typical console application
  *
  * @author Markus Kremer
  */
@@ -50,9 +51,10 @@ public class KgsSHA256ConsoleApplication {
             parameterValidatorService.validateParameters(parameters);
             final File inputFile = new File(args[0]);
             final File outputFile = new File(args[1]);
-            inputDataRepository.attach(inputFile.toURI());
-            outputDataRepository.attach(outputFile.toURI());
+            inputDataRepository.attach(inputFile.toURI(), true);
+            outputDataRepository.attach(outputFile.toURI(), false);
             final Hash generatedHash = hashService.generateHash(inputDataRepository);
+            LOG.info("HASH is: " + Objects.requireNonNull(generatedHash).getHashValue());
             outputDataRepository.save(generatedHash);
             outputDataRepository.detach();
             inputDataRepository.detach();
