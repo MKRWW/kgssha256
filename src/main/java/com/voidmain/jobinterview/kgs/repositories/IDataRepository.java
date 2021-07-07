@@ -29,6 +29,14 @@ public interface IDataRepository {
     /**
      * Saves a hash to a datasource
      * @param generatedHash The hash itself. nothing will be saved if the hash is null.
+     * @throws IOException If data could not be written.
      */
-    void save(final @CheckForNull Hash generatedHash);
+    void save(final @CheckForNull Hash generatedHash) throws IOException;
+
+    /**
+     * Read Data from a source
+     * @return Returns a byte array containing raw data.
+     * @throws IOException Is thrown if data could not be read.
+     */
+    @Nonnull byte[] read() throws IOException;
 }

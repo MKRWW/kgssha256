@@ -14,6 +14,7 @@ import org.bouncycastle.jce.provider.BouncyCastleProvider;
 import java.io.File;
 import java.io.IOException;
 import java.net.MalformedURLException;
+import java.security.NoSuchAlgorithmException;
 import java.security.Security;
 import java.util.Arrays;
 import java.util.Collections;
@@ -51,7 +52,7 @@ public class KgsSHA256ConsoleApplication {
             final File outputFile = new File(args[1]);
             inputDataRepository.attach(inputFile.toURI());
             outputDataRepository.attach(outputFile.toURI());
-            final Hash generatedHash = hashService.generateHash(inputDataRepository, outputDataRepository);
+            final Hash generatedHash = hashService.generateHash(inputDataRepository);
             outputDataRepository.save(generatedHash);
             outputDataRepository.detach();
             inputDataRepository.detach();
@@ -61,6 +62,8 @@ public class KgsSHA256ConsoleApplication {
             LOG.error("OOPS: WTF did you provide as input and/or output path. Are you kidding me?");
         } catch (IOException ioException) {
             LOG.error("OOPS: input and/or output file cannot be read. Check if file is present and you provided the correct path");
+        } catch (NoSuchAlgorithmException cryptoEx) {
+            LOG.error("OOPS: Something went wrong with crypto support. We dont have an SHA256 implementation onboard.");
         }
     }
 }
