@@ -9,10 +9,12 @@ import com.voidmain.jobinterview.kgs.services.IParameterValidatorService;
 import com.voidmain.jobinterview.kgs.services.impl.CommandLineParameterValidatorService;
 import com.voidmain.jobinterview.kgs.services.impl.SHA256HashService;
 import org.apache.log4j.Logger;
+import org.bouncycastle.jce.provider.BouncyCastleProvider;
 
 import java.io.File;
 import java.io.IOException;
 import java.net.MalformedURLException;
+import java.security.Security;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
@@ -24,15 +26,15 @@ import java.util.List;
  */
 public class KgsSHA256ConsoleApplication {
 
-    final static Logger LOG = Logger.getLogger(KgsSHA256ConsoleApplication.class);
+    static final Logger LOG = Logger.getLogger(KgsSHA256ConsoleApplication.class);
 
-    final static IDataRepository inputDataRepository = new FileRepository();
+    static final IDataRepository inputDataRepository = new FileRepository();
 
-    final static IDataRepository outputDataRepository = new FileRepository();
+    static final IDataRepository outputDataRepository = new FileRepository();
 
-    final static IHashService hashService = new SHA256HashService();
+    static final IHashService hashService = new SHA256HashService();
 
-    final static IParameterValidatorService parameterValidatorService = new CommandLineParameterValidatorService();
+    static final IParameterValidatorService parameterValidatorService = new CommandLineParameterValidatorService();
 
     /**
      * The one and only main method
@@ -41,6 +43,7 @@ public class KgsSHA256ConsoleApplication {
      */
     public static void main(String[] args) {
         LOG.info("KGS-SHA256 Hash generator.....");
+        Security.addProvider(new BouncyCastleProvider());
         final List<String> parameters = Collections.unmodifiableList(Arrays.asList(args));
         try {
             parameterValidatorService.validateParameters(parameters);
@@ -54,7 +57,7 @@ public class KgsSHA256ConsoleApplication {
             inputDataRepository.detach();
         } catch (ParameterValidationException parameterValidationException) {
             LOG.error("OOPS: wrong parameters. Root Cause is: " + parameterValidationException.getMessage());
-        } catch (MalformedURLException malformedURLException){
+        } catch (MalformedURLException malformedURLException) {
             LOG.error("OOPS: WTF did you provide as input and/or output path. Are you kidding me?");
         } catch (IOException ioException) {
             LOG.error("OOPS: input and/or output file cannot be read. Check if file is present and you provided the correct path");
