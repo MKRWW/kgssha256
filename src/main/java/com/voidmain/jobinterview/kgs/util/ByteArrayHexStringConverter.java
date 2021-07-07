@@ -9,6 +9,9 @@ import javax.annotation.Nonnull;
  */
 public class ByteArrayHexStringConverter {
 
+    private ByteArrayHexStringConverter(){
+
+    }
     /**
      * Converts a byte array into a nice formatted hexadecimal string.
      * @param hash The data as byte array which shall be converted into a string.
@@ -17,8 +20,8 @@ public class ByteArrayHexStringConverter {
     @Nonnull
     public static String convert(@Nonnull final byte[] hash) {
         final StringBuilder target = new StringBuilder(2 * hash.length);
-        for (int i = 0; i < hash.length; i++) {
-            String hexValue = Integer.toHexString(0xff & hash[i]);
+        for (byte b : hash) {
+            String hexValue = Integer.toHexString(0xff & b);
             if (hexValue.length() == 1) {
                 target.append('0');
             }
